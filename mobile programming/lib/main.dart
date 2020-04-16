@@ -32,10 +32,10 @@ class IntroScreen extends StatefulWidget {
 
 class _IntroScreenState extends State<IntroScreen>
     with SingleTickerProviderStateMixin {
-  static var myNewFont = GoogleFonts.pressStart2P(
-      textStyle: TextStyle(color: Colors.black, letterSpacing: 3));
-  static var myNewFontWhite = GoogleFonts.pressStart2P(
-      textStyle: TextStyle(color: Colors.black, letterSpacing: 3));
+  static var myNewFont = GoogleFonts.meriendaOne(
+      textStyle: TextStyle(color: Colors.indigo, letterSpacing: 3));
+  static var myNewFontWhite = GoogleFonts.dancingScript(
+      textStyle: TextStyle(color: Colors.blue, letterSpacing: 3));
 
   @override
   Widget build(BuildContext context) {
@@ -50,12 +50,12 @@ class _IntroScreenState extends State<IntroScreen>
               children: <Widget>[
                 Expanded(
                   child: Padding(
-                    padding: const EdgeInsets.only(top: 120.0),
+                    padding: EdgeInsets.only(top: 150.0),
                     child: Container(
-                      child: Text(
+                      /*child: Text(
                         "veterinary medicine",
                         style: myNewFontWhite.copyWith(fontSize: 15),
-                      ),
+                      ),*/
                     ),
                   ),
                 ),
@@ -65,7 +65,7 @@ class _IntroScreenState extends State<IntroScreen>
                     child: AvatarGlow(
                       endRadius: 140,
                       duration: Duration(seconds: 2),
-                      glowColor: Colors.black,
+                      glowColor: Colors.indigoAccent,
                       repeat: true,
                       repeatPauseDuration: Duration(seconds: 1),
                       startDelay: Duration(seconds: 1),
@@ -79,8 +79,8 @@ class _IntroScreenState extends State<IntroScreen>
                           backgroundColor: Colors.white,
                           child: Container(
                             child: Image.asset(
-                              'images/PetPedo.png',
-                              color: Colors.black,
+                              'images/logo.png',
+                              //color: Colors.indigo,
                               fit: BoxFit.scaleDown,
                             ),
                           ),
@@ -91,16 +91,27 @@ class _IntroScreenState extends State<IntroScreen>
                   ),
                 ),
                 Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 80.0),
-                    child: Container(
-                      child: Text(
-                        "@petlovers",
-                        style: myNewFontWhite.copyWith(fontSize: 20),
-                      ),
-                    ),
-                  ),
+                  child:Center(
+                 child: Container(
+                   child: Stack(
+                     children: <Widget>[
+
+                       Text(
+                        "PetPeDi",
+                        style: myNewFont.copyWith(fontSize: 50),
+                      ),Padding(
+                         padding: EdgeInsets.only(top:60,left:40),
+
+                         child:
+                       Text(
+                         "love you more...",
+                         style: myNewFontWhite.copyWith(fontSize: 20),
+                       ),)
+                     ]
+                   )
+                    ),)
                 ),
+
                 GestureDetector(
                   onTap: () {
                     Navigator.push(
@@ -109,7 +120,7 @@ class _IntroScreenState extends State<IntroScreen>
                     );
                   },
                   child: Padding(
-                    padding: EdgeInsets.only(left: 40, right: 40, bottom: 20),
+                    padding: EdgeInsets.only(left: 40, right: 40, bottom: 20,top:150),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(20),
                       child: Container(
@@ -118,14 +129,21 @@ class _IntroScreenState extends State<IntroScreen>
                         child: Center(
                           child: Text(
                             'START',
-                            style: myNewFont,
+                            style:GoogleFonts.meriendaOne(
+                                textStyle:
+                                TextStyle(color:
+                                Colors.indigo,
+                                    letterSpacing: 3,fontSize: 30))
                           ),
                         ),
                       ),
                     ),
                   ),
+                )
 
-                ),
+
+
+
    ] )
 
                 )
