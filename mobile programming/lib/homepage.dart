@@ -1,7 +1,8 @@
+import 'package:db_project/doctor_page.dart';
 import 'package:flutter/material.dart';
-import 'package:db_project/signin.dart';
-import 'package:db_project/main.dart';
+import 'package:db_project/client_page.dart';
 import 'package:google_fonts/google_fonts.dart';
+
 
 
 class LogInPage extends StatefulWidget {
@@ -89,7 +90,11 @@ class _HomePageState extends State<LogInPage> {
                         color: Colors.blue,
                         elevation: 7.0,
                         child: GestureDetector(
-                          onTap: () {},
+                          onTap: () { Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => ClientPage()),
+                          );
+                          },
                           child: Center(
                             child: Text(
                               'Log In',
@@ -113,7 +118,10 @@ class _HomePageState extends State<LogInPage> {
                         color: Colors.lightBlueAccent,
                         elevation: 7.0,
                         child: GestureDetector(
-                          onTap: () {},
+                          onTap: () {Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => DoctorPage()),
+                          );},
                           child: Center(
                             child: Text(
                               "I'm a doctor ^-^",
