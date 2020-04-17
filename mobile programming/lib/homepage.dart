@@ -1,6 +1,8 @@
+import 'package:db_project/doctor_page.dart';
 import 'package:flutter/material.dart';
-import 'package:db_project/signin.dart';
-import 'package:db_project/main.dart';
+import 'package:db_project/client_page.dart';
+import 'package:google_fonts/google_fonts.dart';
+
 
 
 class LogInPage extends StatefulWidget {
@@ -17,103 +19,133 @@ class _HomePageState extends State<LogInPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Container(
-              child: Stack(
+              child: Center(child:Stack(
                 children: <Widget>[
+
+
+      CircleAvatar(
+        backgroundColor: Colors.white,
+        child: Container(
+          padding: EdgeInsets.only(top:40,left:30),
+
+          child: Image.asset(
+            'images/logo.png',
+            //color: Colors.indigo,
+            fit: BoxFit.scaleDown,
+          ),
+        ),
+        radius: 80.0,
+      ),
                   Container(
-                    padding: EdgeInsets.fromLTRB(15.0, 110.0, 0.0, 0.0),
-                    child: Text('Hello',
-                        style: TextStyle(
-                            fontSize: 80.0, fontWeight: FontWeight.bold)),
-                  ),
-                  Container(
-                    padding: EdgeInsets.fromLTRB(16.0, 175.0, 0.0, 0.0),
-                    child: Text('There',
-                        style: TextStyle(
-                            fontSize: 80.0, fontWeight: FontWeight.bold)),
-                  ),
-                  Container(
-                    padding: EdgeInsets.fromLTRB(220.0, 175.0, 0.0, 0.0),
-                    child: Text('.',
-                        style: TextStyle(
-                            fontSize: 80.0,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.green)),
+                    padding: EdgeInsets.only(top:160),
+                    child: Text('PetPeDi',
+                        style:GoogleFonts.meriendaOne(
+                            textStyle: TextStyle
+                              (color: Colors.indigo,
+                                letterSpacing: 3,
+                                fontSize: 40))
+                    ),
                   )
                 ],
-              ),
+              ) ),
             ),
-            Container(
-                padding: EdgeInsets.only(top: 35.0, left: 20.0, right: 20.0),
+            Container(width:370.0 ,
+                padding: EdgeInsets.only(top: 35.0, left: 40.0),
+                child:Center(
                 child: Column(
                   children: <Widget>[
                     TextField(
+
                       decoration: InputDecoration(
-                          labelText: 'EMAIL',
+                          labelText: 'Username',
                           labelStyle: TextStyle(
                               fontFamily: 'Montserrat',
                               fontWeight: FontWeight.bold,
+                              fontSize: 20,
                               color: Colors.grey),
                           focusedBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(color: Colors.green))),
+                              borderSide: BorderSide(color: Colors.blueAccent))),
                     ),
                     SizedBox(height: 20.0),
                     TextField(
                       decoration: InputDecoration(
-                          labelText: 'PASSWORD',
+                          labelText: 'Password',
                           labelStyle: TextStyle(
                               fontFamily: 'Montserrat',
                               fontWeight: FontWeight.bold,
+                              fontSize: 20,
                               color: Colors.grey),
                           focusedBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(color: Colors.green))),
+                              borderSide: BorderSide(color: Colors.blueAccent))),
                       obscureText: true,
                     ),
-                    SizedBox(height: 5.0),
-                    Container(
-                      alignment: Alignment(1.0, 0.0),
-                      padding: EdgeInsets.only(top: 15.0, left: 20.0),
-                      child: InkWell(
-                        child: Text(
-                          'Forgot Password',
-                          style: TextStyle(
-                              color: Colors.green,
-                              fontWeight: FontWeight.bold,
-                              fontFamily: 'Montserrat',
-                              decoration: TextDecoration.underline),
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: 40.0),
+
+                    SizedBox(height: 90.0),
                     Container(
                       height: 40.0,
+                      width:400.0,
                       child: Material(
                         borderRadius: BorderRadius.circular(20.0),
-                        shadowColor: Colors.greenAccent,
-                        color: Colors.green,
+                        shadowColor: Colors.blueAccent,
+                        color: Colors.blue,
                         elevation: 7.0,
                         child: GestureDetector(
-                          onTap: () {},
+                          onTap: () { Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => ClientPage()),
+                          );
+                          },
                           child: Center(
                             child: Text(
-                              'LOGIN',
+                              'Log In',
                               style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold,
+                                  fontSize: 20,
                                   fontFamily: 'Montserrat'),
                             ),
                           ),
                         ),
                       ),
                     ),
-                  ],
+                    SizedBox(height:15.0),
+                    Container(
+                      height: 40.0,
+                      width:400.0,
+                      child: Material(
+                        borderRadius: BorderRadius.circular(20.0),
+                        shadowColor: Colors.lightBlueAccent,
+                        color: Colors.lightBlueAccent,
+                        elevation: 7.0,
+                        child: GestureDetector(
+                          onTap: () {Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => DoctorPage()),
+                          );},
+                          child: Center(
+                            child: Text(
+                              "I'm a doctor ^-^",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20,
+                                  fontFamily: 'Montserrat'),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],)
                 )),
-            SizedBox(height: 15.0),
+
+
+            SizedBox(height: 25.0),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Text(
-                  'New to PetPedo ?',
-                  style: TextStyle(fontFamily: 'Montserrat'),
+                  'First time here?',
+                  style: TextStyle(fontFamily: 'Montserrat',fontSize: 20),
                 ),
                 SizedBox(width: 5.0),
                 InkWell(
@@ -121,11 +153,12 @@ class _HomePageState extends State<LogInPage> {
                     Navigator.of(context).pushNamed('/signup');
                   },
                   child: Text(
-                    'Register',
+                    'Sign in!',
                     style: TextStyle(
-                        color: Colors.green,
+                        color: Colors.indigo,
                         fontFamily: 'Montserrat',
                         fontWeight: FontWeight.bold,
+                        fontSize: 20,
                         decoration: TextDecoration.underline),
                   ),
                 )
