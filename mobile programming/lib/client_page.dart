@@ -1,5 +1,9 @@
+import 'package:db_project/client_end.dart';
+import 'package:db_project/homepage.dart';
+import 'package:db_project/personal.dart';
+import 'package:db_project/pet_page.dart';
+import 'package:db_project/registration.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 
 class ClientPage extends StatefulWidget {
@@ -11,22 +15,29 @@ class _HomePageState extends State<ClientPage> {
   Widget build(BuildContext context) {
     return new Scaffold(
         resizeToAvoidBottomPadding: false,
+        appBar: AppBar(title: Text('Clients',style:
+            TextStyle(
+                fontSize: 25,
+                fontFamily: 'Montserrat',color:Colors.white))
+          ,backgroundColor: Color.fromRGBO(0xd9, 0xc0, 0xfd, 1)
+          ,),backgroundColor: Colors.white,
 
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Container(
+              padding: EdgeInsets.only(top:20),
               child: Center(child:Stack(
                 children: <Widget>[
 
 
                   CircleAvatar(
-                    backgroundColor: Colors.white,
+                    backgroundColor: Colors.purpleAccent,
                     child: Container(
-                      padding: EdgeInsets.only(top:40,left:30),
+                     // padding: EdgeInsets.only(top:10),
 
                       child: Image.asset(
-                        'images/logo.png',
+                        'images/anonym.png',
                         //color: Colors.indigo,
                         fit: BoxFit.scaleDown,
                       ),
@@ -34,15 +45,15 @@ class _HomePageState extends State<ClientPage> {
                     radius: 80.0,
                   ),
                   Container(
-                    padding: EdgeInsets.only(top:160),
-                    child: Text('PetPeDi',
-                        style:GoogleFonts.meriendaOne(
-                            textStyle: TextStyle
-                              (color: Colors.indigo,
-                                letterSpacing: 3,
-                                fontSize: 40))
-                    ),
-                  )
+                    padding: EdgeInsets.only(top:180,left:20),
+                    child: Text('Selena Gomez',
+                        style:
+                            TextStyle(
+                                fontSize: 20,
+                                fontFamily: 'Montserrat',
+                                color:  Color.fromRGBO(0x13, 0x20, 0x4b, 1),)
+                    ,
+                    ))
                 ],
               ) ),
             ),
@@ -51,79 +62,158 @@ class _HomePageState extends State<ClientPage> {
                 child:Center(
                     child: Column(
                       children: <Widget>[
-                        TextField(
+                        Container(
+                          height: 40.0,
+                          width:400.0,
+                          decoration: BoxDecoration(
 
-                          decoration: InputDecoration(
-                              labelText: 'Pet name',
-                              labelStyle: TextStyle(
-                                  fontFamily: 'Montserrat',
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20,
-                                  color: Colors.grey),
-                              focusedBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.blueAccent))),
+                              color: Colors.transparent,
+                              borderRadius: BorderRadius.circular(18.0)),
+                          child: Material(
+                            borderRadius: BorderRadius.circular(20.0),
+
+                            shadowColor: Colors.grey,
+                            color: Colors.white,
+                            elevation: 7.0,
+                            child: GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => PersonalPage()),
+                                );
+                              },
+                              child: Center(
+                                child: Text(
+                                  'Personal information >',
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 20,
+                                      fontFamily: 'Montserrat'),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(height:20.0),
+                        Container(
+                          height: 40.0,
+                          width:400.0,
+                          decoration: BoxDecoration(
+
+                              color: Colors.transparent,
+                              borderRadius: BorderRadius.circular(18.0)),
+                          child: Material(
+                            borderRadius: BorderRadius.circular(20.0),
+
+                            shadowColor: Colors.grey,
+                            color: Colors.white,
+                            elevation: 7.0,
+                            child: GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => PetPage()),
+                                );
+                              },
+                              child: Center(
+                                child: Text(
+                                  "Pet's information >",
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 20,
+                                      fontFamily: 'Montserrat'),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(height:20),
+                        Container(
+                          height: 40.0,
+                          width:400.0,
+                          decoration: BoxDecoration(
+
+                              color: Colors.transparent,
+                              borderRadius: BorderRadius.circular(18.0)),
+                          child: Material(
+                            borderRadius: BorderRadius.circular(20.0),
+
+                            shadowColor: Colors.grey,
+                            color: Colors.white,
+                            elevation: 7.0,
+                            child: GestureDetector(
+                              onTap: () {
+                                /*Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => EndPage()),
+                                );*/
+                              },
+                              child: Center(
+                                child: Text(
+                                  'Diagnosis >',
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 20,
+                                      fontFamily: 'Montserrat'),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(height:20),
+                        Container(
+                          height: 40.0,
+                          width:400.0,
+                          decoration: BoxDecoration(
+
+                              color: Colors.transparent,
+                              borderRadius: BorderRadius.circular(18.0)),
+                          child: Material(
+                            borderRadius: BorderRadius.circular(20.0),
+
+                            shadowColor: Colors.grey,
+                            color: Colors.white,
+                            elevation: 7.0,
+                            child: GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => RegistrationPage()),
+                                );
+                              },
+                              child: Center(
+                                child: Text(
+                                  'Registration >',
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 20,
+                                      fontFamily: 'Montserrat'),
+                                ),
+                              ),
+                            ),
+                          ),
                         ),
                         SizedBox(height: 20.0),
-                        TextField(
-                          decoration: InputDecoration(
-                              labelText: 'Breed',
-                              labelStyle: TextStyle(
-                                  fontFamily: 'Montserrat',
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20,
-                                  color: Colors.grey),
-                              focusedBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.blueAccent))),
-                          obscureText: true,
-                        ),
-                        SizedBox(height: 20.0),
-                        TextField(
-                          decoration: InputDecoration(
-                              labelText: 'Age',
-                              labelStyle: TextStyle(
-                                  fontFamily: 'Montserrat',
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20,
-                                  color: Colors.grey),
-                              focusedBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.blueAccent))),
-                          obscureText: true,
-                        ),
-                        SizedBox(height: 20.0),
-                        TextField(
-                          decoration: InputDecoration(
-                              labelText: 'Weight',
-                              labelStyle: TextStyle(
-                                  fontFamily: 'Montserrat',
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20,
-                                  color: Colors.grey),
-                              focusedBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.blueAccent))),
-                          obscureText: true,
-                        ),
-                        SizedBox(height: 90.0),
                         Container(
                           height: 40.0,
                           width:400.0,
                           child: Material(
                             borderRadius: BorderRadius.circular(20.0),
-                            shadowColor: Colors.blueAccent,
-                            color: Colors.blue,
+                            shadowColor: Colors.grey,
+                            color: Color.fromRGBO(0xd9, 0xc0, 0xfd, 1),
                             elevation: 7.0,
                             child: GestureDetector(
                               onTap: () {
-                                /*Navigator.push(
+                                Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) => ()),
-                              );*/
+                                MaterialPageRoute(builder: (context) => LogInPage()),
+                              );
                               },
                               child: Center(
                                 child: Text(
-                                  'Go!',
+                                  'log out',
                                   style: TextStyle(
                                       color: Colors.white,
-                                      fontWeight: FontWeight.bold,
                                       fontSize: 20,
                                       fontFamily: 'Montserrat'),
                                 ),

@@ -32,10 +32,10 @@ class IntroScreen extends StatefulWidget {
 
 class _IntroScreenState extends State<IntroScreen>
     with SingleTickerProviderStateMixin {
-  static var myNewFont = GoogleFonts.meriendaOne(
-      textStyle: TextStyle(color: Colors.indigo, letterSpacing: 3));
-  static var myNewFontWhite = GoogleFonts.dancingScript(
-      textStyle: TextStyle(color: Colors.blue, letterSpacing: 3));
+  static var myNewFont = GoogleFonts.sansita(
+      textStyle: TextStyle(color: Color.fromRGBO(0x13, 0x20, 0x4b, 1), letterSpacing: 6));
+  static var myNewFontWhite = GoogleFonts.rougeScript(
+      textStyle: TextStyle(color: Color.fromRGBO(0x08, 0x63, 0x8d, 1), letterSpacing: 3));
 
   @override
   Widget build(BuildContext context) {
@@ -98,14 +98,14 @@ class _IntroScreenState extends State<IntroScreen>
 
                        Text(
                         "PetPeDi",
-                        style: myNewFont.copyWith(fontSize: 50),
+                        style: myNewFont.copyWith(fontSize: 50,fontStyle: FontStyle.italic,fontWeight: FontWeight.bold),
                       ),Padding(
                          padding: EdgeInsets.only(top:60,left:40),
 
                          child:
                        Text(
                          "love you more...",
-                         style: myNewFontWhite.copyWith(fontSize: 20),
+                         style: myNewFontWhite.copyWith(fontSize: 24),
                        ),)
                      ]
                    )
@@ -128,11 +128,10 @@ class _IntroScreenState extends State<IntroScreen>
                         color: Colors.white,
                         child: Center(
                           child: Text(
-                            'START',
+                            'start',
                             style:GoogleFonts.meriendaOne(
                                 textStyle:
-                                TextStyle(color:
-                                Colors.indigo,
+                                TextStyle(color:Color.fromRGBO(0x13, 0x20, 0x4b, 1),
                                     letterSpacing: 3,fontSize: 30))
                           ),
                         ),

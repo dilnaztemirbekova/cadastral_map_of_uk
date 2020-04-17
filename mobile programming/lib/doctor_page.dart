@@ -1,3 +1,5 @@
+import 'package:db_project/doc_client.dart';
+import 'package:db_project/homepage.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -61,10 +63,10 @@ class _HomePageState extends State<DoctorPage> {
                             elevation: 7.0,
                             child: GestureDetector(
                               onTap: () {
-                                /*Navigator.push(
+                                Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) => ()),
-                              );*/
+                                MaterialPageRoute(builder: (context) => DoctorClient()),
+                              );
                               },
                               child: Center(
                                 child: Text(
@@ -90,10 +92,10 @@ class _HomePageState extends State<DoctorPage> {
                             elevation: 7.0,
                             child: GestureDetector(
                               onTap: () {
-                                /*Navigator.push(
+                                Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) => ()),
-                              );*/
+                                MaterialPageRoute(builder: (context) => DoctorClient()),
+                              );
                               },
                               child: Center(
                                 child: Text(
@@ -119,10 +121,10 @@ class _HomePageState extends State<DoctorPage> {
                             elevation: 7.0,
                             child: GestureDetector(
                               onTap: () {
-                                /*Navigator.push(
+                                Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) => ()),
-                              );*/
+                                MaterialPageRoute(builder: (context) => DoctorClient()),
+                              );
                               },
                               child: Center(
                                 child: Text(
@@ -148,10 +150,10 @@ class _HomePageState extends State<DoctorPage> {
                             elevation: 7.0,
                             child: GestureDetector(
                               onTap: () {
-                                /*Navigator.push(
+                                Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) => ()),
-                              );*/
+                                MaterialPageRoute(builder: (context) => DoctorClient()),
+                              );
                               },
                               child: Center(
                                 child: Text(
@@ -176,10 +178,10 @@ class _HomePageState extends State<DoctorPage> {
                             elevation: 7.0,
                             child: GestureDetector(
                               onTap: () {
-                                /*Navigator.push(
+                                Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) => ()),
-                              );*/
+                                MaterialPageRoute(builder: (context) => DoctorClient()),
+                              );
                               },
                               child: Center(
                                 child: Text(
@@ -205,10 +207,10 @@ class _HomePageState extends State<DoctorPage> {
                             elevation: 7.0,
                             child: GestureDetector(
                               onTap: () {
-                                /*Navigator.push(
+                                Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) => ()),
-                              );*/
+                                MaterialPageRoute(builder: (context) => DoctorClient()),
+                              );
                               },
                               child: Center(
                                 child: Text(
@@ -220,6 +222,39 @@ class _HomePageState extends State<DoctorPage> {
                                       fontFamily: 'Montserrat'),
                                 ),
                               ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(height:20.0),
+                        Container(
+                          height: 40.0,
+                          color: Colors.transparent,
+                          child: Container(
+                            decoration: BoxDecoration(
+                                border: Border.all(
+                                    color: Colors.black,
+                                    style: BorderStyle.solid,
+                                    width: 1.0),
+                                color: Colors.transparent,
+                                borderRadius: BorderRadius.circular(20.0)),
+                            child: InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder:
+                                      (context) => LogInPage()),
+                                );
+                              },
+                              child:
+
+                              Center(
+                                child: Text('Go Back',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,fontSize: 20,
+                                        fontFamily: 'Montserrat')),
+                              ),
+
+
                             ),
                           ),
                         ),
