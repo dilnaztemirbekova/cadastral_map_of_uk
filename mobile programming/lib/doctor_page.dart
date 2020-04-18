@@ -1,5 +1,8 @@
+import 'package:db_project/doc_client.dart';
+import 'package:db_project/doc_login.dart';
+import 'package:db_project/doc_personal.dart';
+import 'package:db_project/doc_timetable.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 
 class DoctorPage extends StatefulWidget {
@@ -11,22 +14,29 @@ class _HomePageState extends State<DoctorPage> {
   Widget build(BuildContext context) {
     return new Scaffold(
         resizeToAvoidBottomPadding: false,
+        appBar: AppBar(title: Text('Doctors',style:
+        TextStyle(
+            fontSize: 25,
+            fontFamily: 'Montserrat',color:Colors.white))
+          ,backgroundColor: Color.fromRGBO(0x62, 0x9e, 0xea, 1)
+          ,),backgroundColor: Colors.white,
 
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Container(
+              padding: EdgeInsets.only(top:20),
               child: Center(child:Stack(
                 children: <Widget>[
 
 
                   CircleAvatar(
-                    backgroundColor: Colors.white,
+                    backgroundColor: Colors.purpleAccent,
                     child: Container(
-                      padding: EdgeInsets.only(top:40,left:30),
+                      // padding: EdgeInsets.only(top:10),
 
                       child: Image.asset(
-                        'images/logo.png',
+                        'images/anonym.png',
                         //color: Colors.indigo,
                         fit: BoxFit.scaleDown,
                       ),
@@ -34,44 +44,48 @@ class _HomePageState extends State<DoctorPage> {
                     radius: 80.0,
                   ),
                   Container(
-                    padding: EdgeInsets.only(top:160),
-                    child: Text('PetPeDi',
-                        style:GoogleFonts.meriendaOne(
-                            textStyle: TextStyle
-                              (color: Colors.indigo,
-                                letterSpacing: 3,
-                                fontSize: 40))
-                    ),
-                  )
+                      padding: EdgeInsets.only(top:180,left:20),
+                      child: Text('Dr. John Doe',
+                        style:
+                        TextStyle(
+                          fontSize: 20,
+                          fontFamily: 'Montserrat',
+                          color:  Color.fromRGBO(0x13, 0x20, 0x4b, 1),)
+                        ,
+                      ))
                 ],
               ) ),
             ),
             Container(width:370.0 ,
-                padding: EdgeInsets.only(top: 35.0, left: 40.0),
+                padding: EdgeInsets.only(top: 45.0, left: 40.0),
                 child:Center(
                     child: Column(
                       children: <Widget>[
                         Container(
                           height: 40.0,
                           width:400.0,
+                          decoration: BoxDecoration(
+
+                              color: Colors.transparent,
+                              borderRadius: BorderRadius.circular(18.0)),
                           child: Material(
                             borderRadius: BorderRadius.circular(20.0),
-                            shadowColor: Colors.blueAccent,
-                            color: Colors.blue,
+
+                            shadowColor: Colors.grey,
+                            color: Colors.white,
                             elevation: 7.0,
                             child: GestureDetector(
                               onTap: () {
-                                /*Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (context) => ()),
-                              );*/
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => DocPersonalPage()),
+                                );
                               },
                               child: Center(
                                 child: Text(
-                                  'Client: Aisha',
+                                  'Personal information >',
                                   style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
+                                      color: Colors.black,
                                       fontSize: 20,
                                       fontFamily: 'Montserrat'),
                                 ),
@@ -79,28 +93,94 @@ class _HomePageState extends State<DoctorPage> {
                             ),
                           ),
                         ),
+                        SizedBox(height:30.0),
+                        Container(
+                          height: 40.0,
+                          width:400.0,
+                          decoration: BoxDecoration(
+
+                              color: Colors.transparent,
+                              borderRadius: BorderRadius.circular(18.0)),
+                          child: Material(
+                            borderRadius: BorderRadius.circular(20.0),
+
+                            shadowColor: Colors.grey,
+                            color: Colors.white,
+                            elevation: 7.0,
+                            child: GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => Timetable()),
+                                );
+                              },
+                              child: Center(
+                                child: Text(
+                                  "Timetable >",
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 20,
+                                      fontFamily: 'Montserrat'),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(height:30),
+                        Container(
+                          height: 40.0,
+                          width:400.0,
+                          decoration: BoxDecoration(
+
+                              color: Colors.transparent,
+                              borderRadius: BorderRadius.circular(18.0)),
+                          child: Material(
+                            borderRadius: BorderRadius.circular(20.0),
+
+                            shadowColor: Colors.grey,
+                            color: Colors.white,
+                            elevation: 7.0,
+                            child: GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => DoctorClient()),
+                                );
+                              },
+                              child: Center(
+                                child: Text(
+                                  "Client's list >",
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 20,
+                                      fontFamily: 'Montserrat'),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+
                         SizedBox(height: 20.0),
                         Container(
                           height: 40.0,
                           width:400.0,
                           child: Material(
                             borderRadius: BorderRadius.circular(20.0),
-                            shadowColor: Colors.blueAccent,
-                            color: Colors.blue,
+                            shadowColor: Colors.grey,
+                            color:Color.fromRGBO(0x62, 0x9e, 0xea, 1),
                             elevation: 7.0,
                             child: GestureDetector(
                               onTap: () {
-                                /*Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (context) => ()),
-                              );*/
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => DocLogInPage()),
+                                );
                               },
                               child: Center(
                                 child: Text(
-                                  'Client: Diana',
+                                  'log out',
                                   style: TextStyle(
                                       color: Colors.white,
-                                      fontWeight: FontWeight.bold,
                                       fontSize: 20,
                                       fontFamily: 'Montserrat'),
                                 ),
@@ -108,127 +188,9 @@ class _HomePageState extends State<DoctorPage> {
                             ),
                           ),
                         ),
-                        SizedBox(height: 20.0),
-                        Container(
-                          height: 40.0,
-                          width:400.0,
-                          child: Material(
-                            borderRadius: BorderRadius.circular(20.0),
-                            shadowColor: Colors.blueAccent,
-                            color: Colors.blue,
-                            elevation: 7.0,
-                            child: GestureDetector(
-                              onTap: () {
-                                /*Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (context) => ()),
-                              );*/
-                              },
-                              child: Center(
-                                child: Text(
-                                  'Client: Dulat',
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 20,
-                                      fontFamily: 'Montserrat'),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        SizedBox(height: 20.0),
-                        Container(
-                          height: 40.0,
-                          width:400.0,
-                          child: Material(
-                            borderRadius: BorderRadius.circular(20.0),
-                            shadowColor: Colors.blueAccent,
-                            color: Colors.blue,
-                            elevation: 7.0,
-                            child: GestureDetector(
-                              onTap: () {
-                                /*Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (context) => ()),
-                              );*/
-                              },
-                              child: Center(
-                                child: Text(
-                                  'Client: Aidos',
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 20,
-                                      fontFamily: 'Montserrat'),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),SizedBox(height: 20.0),
-                        Container(
-                          height: 40.0,
-                          width:400.0,
-                          child: Material(
-                            borderRadius: BorderRadius.circular(20.0),
-                            shadowColor: Colors.blueAccent,
-                            color: Colors.blue,
-                            elevation: 7.0,
-                            child: GestureDetector(
-                              onTap: () {
-                                /*Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (context) => ()),
-                              );*/
-                              },
-                              child: Center(
-                                child: Text(
-                                  'Client: Arman',
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 20,
-                                      fontFamily: 'Montserrat'),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        SizedBox(height: 20.0),
-                        Container(
-                          height: 40.0,
-                          width:400.0,
-                          child: Material(
-                            borderRadius: BorderRadius.circular(20.0),
-                            shadowColor: Colors.blueAccent,
-                            color: Colors.blue,
-                            elevation: 7.0,
-                            child: GestureDetector(
-                              onTap: () {
-                                /*Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (context) => ()),
-                              );*/
-                              },
-                              child: Center(
-                                child: Text(
-                                  'Client: Assem',
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 20,
-                                      fontFamily: 'Montserrat'),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],)
-                )),
 
 
-
-          ],
+          ],)))]
         ));
   }
 }

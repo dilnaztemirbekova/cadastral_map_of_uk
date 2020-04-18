@@ -1,11 +1,12 @@
+import 'package:db_project/docperreg.dart';
 import 'package:flutter/material.dart';
 
-class SignupPage extends StatefulWidget {
+class DoctorSigninPage extends StatefulWidget {
   @override
   _SignupPageState createState() => _SignupPageState();
 }
 
-class _SignupPageState extends State<SignupPage> {
+class _SignupPageState extends State<DoctorSigninPage> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -30,7 +31,7 @@ class _SignupPageState extends State<SignupPage> {
                     style: TextStyle(
                         fontSize: 80.0,
                         fontWeight: FontWeight.bold,
-                        color: Colors.blue),
+                        color: Color.fromRGBO(0x62, 0x9e, 0xea, 1)),
                   ),
                 )
               ],
@@ -71,11 +72,16 @@ class _SignupPageState extends State<SignupPage> {
                       height: 40.0,
                       child: Material(
                         borderRadius: BorderRadius.circular(20.0),
-                        shadowColor: Colors.blueAccent,
-                        color: Colors.blue,
+                        shadowColor: Colors.grey,
+                        color:Color.fromRGBO(0x62, 0x9e, 0xea, 1),
                         elevation: 7.0,
                         child: GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => DocPerReg()),
+                            );
+                          },
                           child: Center(
                             child: Text(
                               'Sign In',

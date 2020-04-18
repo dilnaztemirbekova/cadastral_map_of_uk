@@ -1,14 +1,16 @@
-import 'package:db_project/application.dart';
+import 'package:db_project/doc_signin.dart';
 import 'package:db_project/doctor_page.dart';
 import 'package:flutter/material.dart';
+import 'package:db_project/client_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 
-class DoctorClient extends StatefulWidget {
+
+class DocLogInPage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
 }
-class _HomePageState extends State<DoctorClient> {
+class _HomePageState extends State<DocLogInPage> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -18,14 +20,17 @@ class _HomePageState extends State<DoctorClient> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Container(
-              child: Center(child:Stack(
+              padding: EdgeInsets.only(top:50),
+              child: Center(child:Stack
+                (
                 children: <Widget>[
 
 
                   CircleAvatar(
+
                     backgroundColor: Colors.white,
                     child: Container(
-                      padding: EdgeInsets.only(top:40,left:30),
+                      padding: EdgeInsets.only(top:15,left:15),
 
                       child: Image.asset(
                         'images/logo.png',
@@ -38,12 +43,23 @@ class _HomePageState extends State<DoctorClient> {
                   Container(
                     padding: EdgeInsets.only(top:160),
                     child: Text('PetPeDi',
-                        style:GoogleFonts.meriendaOne(
+                        style:GoogleFonts.sansita(
                             textStyle: TextStyle
-                              (color: Colors.indigo,
-                                letterSpacing: 3,
-                                fontSize: 40))
+                              (color: Color.fromRGBO(0x13, 0x20, 0x4b, 1),
+                                letterSpacing: 6,
+                                fontSize: 40,
+                                fontStyle: FontStyle.italic,fontWeight: FontWeight.bold))
                     ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.only(top:160),
+                    child: Text('for doctors',
+                        style: TextStyle
+                              (color: Color.fromRGBO(0x08, 0x63, 0x8d, 1),
+                            fontFamily: 'Montserrat',
+                                fontSize: 14,
+                                fontStyle: FontStyle.italic,fontWeight: FontWeight.bold))
+
                   )
                 ],
               ) ),
@@ -53,53 +69,50 @@ class _HomePageState extends State<DoctorClient> {
                 child:Center(
                     child: Column(
                       children: <Widget>[
-                        Container(
-                          height: 40.0,
-                          width:400.0,
-                          child: Material(
-                            borderRadius: BorderRadius.circular(20.0),
-                            shadowColor: Colors.blueAccent,
-                            color: Colors.blue,
-                            elevation: 7.0,
-                            child: GestureDetector(
-                              onTap: () {
-                                Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (context) => Application()),
-                              );
-                              },
-                              child: Center(
-                                child: Text(
-                                  'Application: pet_name',
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 20,
-                                      fontFamily: 'Montserrat'),
-                                ),
-                              ),
-                            ),
-                          ),
+                        TextField(
+
+                          decoration: InputDecoration(
+                              labelText: 'ID',
+                              labelStyle: TextStyle(
+                                  fontFamily: 'Montserrat',
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20,
+                                  color: Colors.grey),
+                              focusedBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.blueAccent))),
                         ),
                         SizedBox(height: 20.0),
+                        TextField(
+                          decoration: InputDecoration(
+                              labelText: 'Password',
+                              labelStyle: TextStyle(
+                                  fontFamily: 'Montserrat',
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20,
+                                  color: Colors.grey),
+                              focusedBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.blueAccent))),
+                          obscureText: true,
+                        ),
+
+                        SizedBox(height: 90.0),
                         Container(
                           height: 40.0,
                           width:400.0,
                           child: Material(
                             borderRadius: BorderRadius.circular(20.0),
-                            shadowColor: Colors.blueAccent,
-                            color: Colors.blue,
+                            //shadowColor: Colors.blueAccent,
+                            color:  Color.fromRGBO(0x13, 0x20, 0x4b, 1),
                             elevation: 7.0,
                             child: GestureDetector(
-                              onTap: () {
-                                Navigator.push(
+                              onTap: () { Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) => Application()),
+                                MaterialPageRoute(builder: (context) => DoctorPage()),
                               );
                               },
                               child: Center(
                                 child: Text(
-                                  'Application: pet_name',
+                                  'Log In',
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.bold,
@@ -110,40 +123,33 @@ class _HomePageState extends State<DoctorClient> {
                             ),
                           ),
                         ),
-                        SizedBox(height:20.0),
+                        SizedBox(height:15.0),
                         Container(
                           height: 40.0,
-                          color: Colors.transparent,
-                          child: Container(
-                            decoration: BoxDecoration(
-                                border: Border.all(
-                                    color: Colors.black,
-                                    style: BorderStyle.solid,
-                                    width: 1.0),
-                                color: Colors.transparent,
-                                borderRadius: BorderRadius.circular(20.0)),
-                            child: InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(builder:
-                                      (context) => DoctorPage()),
-                                );
-                              },
-                              child:
-
-                              Center(
-                                child: Text('Go Back',
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold,fontSize: 20,
-                                        fontFamily: 'Montserrat')),
+                          width:400.0,
+                          child: Material(
+                            borderRadius: BorderRadius.circular(20.0),
+                            //shadowColor: Colors.lightBlueAccent,
+                            color: Color.fromRGBO(0x62, 0x9e, 0xea, 1),
+                            elevation: 7.0,
+                            child: GestureDetector(
+                              onTap: () {Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => DoctorSigninPage()),
+                              );},
+                              child: Center(
+                                child: Text(
+                                  "Sign in",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20,
+                                      fontFamily: 'Montserrat'),
+                                ),
                               ),
-
-
                             ),
                           ),
                         ),
-
                       ],)
                 )),
 

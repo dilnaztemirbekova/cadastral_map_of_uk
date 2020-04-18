@@ -1,3 +1,4 @@
+import 'package:db_project/doc_login.dart';
 import 'package:db_project/doctor_page.dart';
 import 'package:flutter/material.dart';
 import 'package:db_project/client_page.dart';
@@ -19,14 +20,17 @@ class _HomePageState extends State<LogInPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Container(
-              child: Center(child:Stack(
+              padding: EdgeInsets.only(top:50),
+              child: Center(child:Stack
+                (
                 children: <Widget>[
 
 
       CircleAvatar(
+
         backgroundColor: Colors.white,
         child: Container(
-          padding: EdgeInsets.only(top:40,left:30),
+          padding: EdgeInsets.only(top:15,left:15),
 
           child: Image.asset(
             'images/logo.png',
@@ -39,11 +43,12 @@ class _HomePageState extends State<LogInPage> {
                   Container(
                     padding: EdgeInsets.only(top:160),
                     child: Text('PetPeDi',
-                        style:GoogleFonts.meriendaOne(
+                        style:GoogleFonts.sansita(
                             textStyle: TextStyle
-                              (color: Colors.indigo,
-                                letterSpacing: 3,
-                                fontSize: 40))
+                              (color: Color.fromRGBO(0x13, 0x20, 0x4b, 1),
+                                letterSpacing: 6,
+                                fontSize: 40,
+                                fontStyle: FontStyle.italic,fontWeight: FontWeight.bold))
                     ),
                   )
                 ],
@@ -120,7 +125,7 @@ class _HomePageState extends State<LogInPage> {
                         child: GestureDetector(
                           onTap: () {Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => DoctorPage()),
+                            MaterialPageRoute(builder: (context) => DocLogInPage()),
                           );},
                           child: Center(
                             child: Text(

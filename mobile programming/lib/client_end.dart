@@ -17,15 +17,16 @@ class _HomePageState extends State<EndPage> {
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Container(
+            Container( padding: EdgeInsets.only(top:50),
               child: Center(child:Stack(
                 children: <Widget>[
 
 
                   CircleAvatar(
+
                     backgroundColor: Colors.white,
                     child: Container(
-                      padding: EdgeInsets.only(top:40,left:30),
+                      padding: EdgeInsets.only(top:15,left:15),
 
                       child: Image.asset(
                         'images/logo.png',
@@ -66,7 +67,7 @@ class _HomePageState extends State<EndPage> {
                                 child: Text(
                                   'Your application is accepted!',
                                   style: TextStyle(
-                                      color: Colors.blue,
+                                      color: Colors.black,
                                       fontWeight: FontWeight.bold,
                                       fontSize: 20,
                                       fontFamily: 'Montserrat'),
@@ -78,33 +79,28 @@ class _HomePageState extends State<EndPage> {
                         SizedBox(height:20.0),
                         Container(
                           height: 40.0,
-                          color: Colors.transparent,
-                          child: Container(
-                            decoration: BoxDecoration(
-                                border: Border.all(
-                                    color: Colors.black,
-                                    style: BorderStyle.solid,
-                                    width: 1.0),
-                                color: Colors.transparent,
-                                borderRadius: BorderRadius.circular(20.0)),
-                            child: InkWell(
+                          width:400.0,
+                          child: Material(
+                            borderRadius: BorderRadius.circular(20.0),
+                            shadowColor: Colors.grey,
+                            color: Color.fromRGBO(0xd9, 0xc0, 0xfd, 1),
+                            elevation: 7.0,
+                            child: GestureDetector(
                               onTap: () {
                                 Navigator.push(
                                   context,
-                                  MaterialPageRoute(builder:
-                                      (context) => ClientPage()),
+                                  MaterialPageRoute(builder: (context) => ClientPage()),
                                 );
                               },
-                              child:
-
-                              Center(
-                                child: Text('Submit a new application',
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold,fontSize: 20,
-                                        fontFamily: 'Montserrat')),
+                              child: Center(
+                                child: Text(
+                                  'go back',
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 20,
+                                      fontFamily: 'Montserrat'),
+                                ),
                               ),
-
-
                             ),
                           ),
                         ),
