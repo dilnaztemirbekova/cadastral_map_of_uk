@@ -130,7 +130,7 @@ class _HomePageState extends State<DocLogInPage> {
                           child: Material(
                             borderRadius: BorderRadius.circular(20.0),
                             //shadowColor: Colors.lightBlueAccent,
-                            color: Colors.cyanAccent,
+                            color: Color.fromRGBO(0x62, 0x9e, 0xea, 1),
                             elevation: 7.0,
                             child: GestureDetector(
                               onTap: () {Navigator.push(

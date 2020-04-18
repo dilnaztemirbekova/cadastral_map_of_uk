@@ -1,3 +1,4 @@
+import 'package:db_project/client_sigin.dart';
 import 'package:flutter/material.dart';
 
 class SignupPage extends StatefulWidget {
@@ -30,7 +31,7 @@ class _SignupPageState extends State<SignupPage> {
                     style: TextStyle(
                         fontSize: 80.0,
                         fontWeight: FontWeight.bold,
-                        color: Colors.blue),
+                        color: Color.fromRGBO(0xd9, 0xc0, 0xfd, 1)),
                   ),
                 )
               ],
@@ -71,11 +72,14 @@ class _SignupPageState extends State<SignupPage> {
                       height: 40.0,
                       child: Material(
                         borderRadius: BorderRadius.circular(20.0),
-                        shadowColor: Colors.blueAccent,
-                        color: Colors.blue,
+                        shadowColor: Colors.grey,
+                        color: Color.fromRGBO(0xd9, 0xc0, 0xfd, 1),
                         elevation: 7.0,
                         child: GestureDetector(
-                          onTap: () {},
+                          onTap: () {Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => ClientSignInPage()),
+                          );},
                           child: Center(
                             child: Text(
                               'Sign In',

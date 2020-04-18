@@ -1,17 +1,17 @@
-import 'package:db_project/pet_signin.dart';
+import 'package:db_project/client_page.dart';
 import 'package:flutter/material.dart';
 
 
-class ClientSignInPage extends StatefulWidget {
+class PetSignInPage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
 }
-class _HomePageState extends State<ClientSignInPage> {
+class _HomePageState extends State<PetSignInPage> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
         resizeToAvoidBottomPadding: false,
-        appBar: AppBar(title: Text('Client registration',style:
+        appBar: AppBar(title: Text('Pet registration',style:
             TextStyle(
                 fontSize: 25,
                 fontFamily: 'Montserrat',color:Colors.white)
@@ -43,7 +43,7 @@ class _HomePageState extends State<ClientSignInPage> {
                         SizedBox(height: 20.0),
                         TextField(
                           decoration: InputDecoration(
-                              labelText: 'Surname',
+                              labelText: "Pet's type",
                               labelStyle: TextStyle(
                                   fontFamily: 'Montserrat',
                                   fontWeight: FontWeight.bold,
@@ -69,7 +69,7 @@ class _HomePageState extends State<ClientSignInPage> {
                         SizedBox(height: 20.0),
                         TextField(
                           decoration: InputDecoration(
-                              labelText: "Email",
+                              labelText: "Breed",
                               labelStyle: TextStyle(
                                   fontFamily: 'Montserrat',
                                   fontWeight: FontWeight.bold,
@@ -82,7 +82,32 @@ class _HomePageState extends State<ClientSignInPage> {
                         SizedBox(height: 20.0),
                         TextField(
                           decoration: InputDecoration(
-                              labelText: 'Telephone',
+                              labelText: 'Age',
+                              labelStyle: TextStyle(
+                                  fontFamily: 'Montserrat',
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20,
+                                  color: Colors.grey),
+                              focusedBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.blueAccent))),
+                          obscureText: true,
+                        ),SizedBox(height: 20.0),
+                        TextField(
+                          decoration: InputDecoration(
+                              labelText: 'Height',
+                              labelStyle: TextStyle(
+                                  fontFamily: 'Montserrat',
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20,
+                                  color: Colors.grey),
+                              focusedBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.blueAccent))),
+                          obscureText: true,
+                        ),
+                        SizedBox(height: 20.0),
+                        TextField(
+                          decoration: InputDecoration(
+                              labelText: 'Weight',
                               labelStyle: TextStyle(
                                   fontFamily: 'Montserrat',
                                   fontWeight: FontWeight.bold,
@@ -105,7 +130,7 @@ class _HomePageState extends State<ClientSignInPage> {
                               onTap: () {
                                 Navigator.push(
                                   context,
-                                  MaterialPageRoute(builder: (context) => PetSignInPage()),
+                                  MaterialPageRoute(builder: (context) => ClientPage()),
                                 );
                               },
                               child: Center(

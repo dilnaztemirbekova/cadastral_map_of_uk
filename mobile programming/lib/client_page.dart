@@ -1,4 +1,4 @@
-import 'package:db_project/client_end.dart';
+import 'package:db_project/diagnosis.dart';
 import 'package:db_project/homepage.dart';
 import 'package:db_project/personal.dart';
 import 'package:db_project/pet_page.dart';
@@ -143,10 +143,10 @@ class _HomePageState extends State<ClientPage> {
                             elevation: 7.0,
                             child: GestureDetector(
                               onTap: () {
-                                /*Navigator.push(
+                                Navigator.push(
                                   context,
-                                  MaterialPageRoute(builder: (context) => EndPage()),
-                                );*/
+                                  MaterialPageRoute(builder: (context) => Diagnosis()),
+                                );
                               },
                               child: Center(
                                 child: Text(

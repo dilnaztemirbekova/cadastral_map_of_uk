@@ -1,7 +1,7 @@
-import 'package:db_project/application.dart';
-import 'package:db_project/doctor_page.dart';
+import 'package:db_project/doc_login.dart';
+import 'package:db_project/doc_personal.dart';
+import 'package:db_project/pet_page.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 
 class DoctorClient extends StatefulWidget {
@@ -13,143 +13,153 @@ class _HomePageState extends State<DoctorClient> {
   Widget build(BuildContext context) {
     return new Scaffold(
         resizeToAvoidBottomPadding: false,
+        appBar: AppBar(title: Text('Clients list',style:
+        TextStyle(
+            fontSize: 25,
+            fontFamily: 'Montserrat',color:Colors.white))
+          ,backgroundColor: Color.fromRGBO(0x62, 0x9e, 0xea, 1)
+          ,),backgroundColor: Colors.white,
 
         body: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Container(
-              child: Center(child:Stack(
-                children: <Widget>[
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Container(
+                padding: EdgeInsets.only(top:20),
+                child: Center(child:Stack(
+                  children: <Widget>[
 
 
-                  CircleAvatar(
-                    backgroundColor: Colors.white,
-                    child: Container(
-                      padding: EdgeInsets.only(top:40,left:30),
+                    CircleAvatar(
+                      backgroundColor: Colors.purpleAccent,
+                      child: Container(
+                        // padding: EdgeInsets.only(top:10),
 
-                      child: Image.asset(
-                        'images/logo.png',
-                        //color: Colors.indigo,
-                        fit: BoxFit.scaleDown,
+                        child: Image.asset(
+                          'images/anonym.png',
+                          //color: Colors.indigo,
+                          fit: BoxFit.scaleDown,
+                        ),
                       ),
+                      radius: 80.0,
                     ),
-                    radius: 80.0,
-                  ),
-                  Container(
-                    padding: EdgeInsets.only(top:160),
-                    child: Text('PetPeDi',
-                        style:GoogleFonts.meriendaOne(
-                            textStyle: TextStyle
-                              (color: Colors.indigo,
-                                letterSpacing: 3,
-                                fontSize: 40))
-                    ),
-                  )
-                ],
-              ) ),
-            ),
-            Container(width:370.0 ,
-                padding: EdgeInsets.only(top: 35.0, left: 40.0),
-                child:Center(
-                    child: Column(
-                      children: <Widget>[
-                        Container(
-                          height: 40.0,
-                          width:400.0,
-                          child: Material(
-                            borderRadius: BorderRadius.circular(20.0),
-                            shadowColor: Colors.blueAccent,
-                            color: Colors.blue,
-                            elevation: 7.0,
-                            child: GestureDetector(
-                              onTap: () {
-                                Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (context) => Application()),
-                              );
-                              },
-                              child: Center(
-                                child: Text(
-                                  'Application: pet_name',
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 20,
-                                      fontFamily: 'Montserrat'),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        SizedBox(height: 20.0),
-                        Container(
-                          height: 40.0,
-                          width:400.0,
-                          child: Material(
-                            borderRadius: BorderRadius.circular(20.0),
-                            shadowColor: Colors.blueAccent,
-                            color: Colors.blue,
-                            elevation: 7.0,
-                            child: GestureDetector(
-                              onTap: () {
-                                Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (context) => Application()),
-                              );
-                              },
-                              child: Center(
-                                child: Text(
-                                  'Application: pet_name',
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 20,
-                                      fontFamily: 'Montserrat'),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        SizedBox(height:20.0),
-                        Container(
-                          height: 40.0,
-                          color: Colors.transparent,
-                          child: Container(
+                    Container(
+                        padding: EdgeInsets.only(top:180,left:20),
+                        child: Text('Dr. John Doe',
+                          style:
+                          TextStyle(
+                            fontSize: 20,
+                            fontFamily: 'Montserrat',
+                            color:  Color.fromRGBO(0x13, 0x20, 0x4b, 1),)
+                          ,
+                        ))
+                  ],
+                ) ),
+              ),
+              Container(width:370.0 ,
+                  padding: EdgeInsets.only(top: 45.0, left: 40.0),
+                  child:Center(
+                      child: Column(
+                        children: <Widget>[
+                          Container(
+                            height: 40.0,
+                            width:400.0,
                             decoration: BoxDecoration(
-                                border: Border.all(
-                                    color: Colors.black,
-                                    style: BorderStyle.solid,
-                                    width: 1.0),
+
                                 color: Colors.transparent,
-                                borderRadius: BorderRadius.circular(20.0)),
-                            child: InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(builder:
-                                      (context) => DoctorPage()),
-                                );
-                              },
-                              child:
+                                borderRadius: BorderRadius.circular(18.0)),
+                            child: Material(
+                              borderRadius: BorderRadius.circular(20.0),
 
-                              Center(
-                                child: Text('Go Back',
+                              shadowColor: Colors.grey,
+                              color: Colors.white,
+                              elevation: 7.0,
+                              child: GestureDetector(
+                                onTap: () {
+                                  /*Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) => DocPersonalPage()),
+                                  );*/
+                                },
+                                child: Center(
+                                  child: Text(
+                                    'Client name >',
                                     style: TextStyle(
-                                        fontWeight: FontWeight.bold,fontSize: 20,
-                                        fontFamily: 'Montserrat')),
+                                        color: Colors.black,
+                                        fontSize: 20,
+                                        fontFamily: 'Montserrat'),
+                                  ),
+                                ),
                               ),
-
-
                             ),
                           ),
-                        ),
+                          SizedBox(height:30.0),
+                          Container(
+                            height: 40.0,
+                            width:400.0,
+                            decoration: BoxDecoration(
 
-                      ],)
-                )),
+                                color: Colors.transparent,
+                                borderRadius: BorderRadius.circular(18.0)),
+                            child: Material(
+                              borderRadius: BorderRadius.circular(20.0),
 
+                              shadowColor: Colors.grey,
+                              color: Colors.white,
+                              elevation: 7.0,
+                              child: GestureDetector(
+                                onTap: () {
+                                  /*Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) => PetPage()),
+                                  );*/
+                                },
+                                child: Center(
+                                  child: Text(
+                                    "Client name >",
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 20,
+                                        fontFamily: 'Montserrat'),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          SizedBox(height:30),
+                          Container(
+                            height: 40.0,
+                            width:400.0,
+                            decoration: BoxDecoration(
 
+                                color: Colors.transparent,
+                                borderRadius: BorderRadius.circular(18.0)),
+                            child: Material(
+                              borderRadius: BorderRadius.circular(20.0),
 
-          ],
+                              shadowColor: Colors.grey,
+                              color: Colors.white,
+                              elevation: 7.0,
+                              child: GestureDetector(
+                                onTap: () {
+                                 /* Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) => DoctorClient()),
+                                  );*/
+                                },
+                                child: Center(
+                                  child: Text(
+                                    "Client name >",
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 20,
+                                        fontFamily: 'Montserrat'),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+
+                        ],)))]
         ));
   }
 }

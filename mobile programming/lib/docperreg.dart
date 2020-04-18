@@ -1,21 +1,22 @@
+import 'package:db_project/doctor_page.dart';
 import 'package:db_project/pet_signin.dart';
 import 'package:flutter/material.dart';
 
 
-class ClientSignInPage extends StatefulWidget {
+class DocPerReg extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
 }
-class _HomePageState extends State<ClientSignInPage> {
+class _HomePageState extends State<DocPerReg> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
         resizeToAvoidBottomPadding: false,
-        appBar: AppBar(title: Text('Client registration',style:
-            TextStyle(
-                fontSize: 25,
-                fontFamily: 'Montserrat',color:Colors.white)
-          ,),backgroundColor: Color.fromRGBO(0xd9, 0xc0, 0xfd, 1)
+        appBar: AppBar(title: Text('Doctor registration',style:
+        TextStyle(
+            fontSize: 25,
+            fontFamily: 'Montserrat',color:Colors.white)
+          ,),backgroundColor:Color.fromRGBO(0x62, 0x9e, 0xea, 1)
           ,),
 
         body: Column(
@@ -99,13 +100,13 @@ class _HomePageState extends State<ClientSignInPage> {
                           child: Material(
                             borderRadius: BorderRadius.circular(20.0),
                             shadowColor: Colors.grey,
-                            color: Color.fromRGBO(0xd9, 0xc0, 0xfd, 1),
+                            color: Color.fromRGBO(0x62, 0x9e, 0xea, 1),
                             elevation: 7.0,
                             child: GestureDetector(
                               onTap: () {
                                 Navigator.push(
                                   context,
-                                  MaterialPageRoute(builder: (context) => PetSignInPage()),
+                                  MaterialPageRoute(builder: (context) => DoctorPage()),
                                 );
                               },
                               child: Center(
